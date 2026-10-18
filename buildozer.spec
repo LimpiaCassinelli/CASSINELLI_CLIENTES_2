@@ -13,6 +13,7 @@ fullscreen = 0
 android.api = 33
 android.minapi = 23
 android.archs = arm64-v8a
+android.ndk = 25b
 android.accept_sdk_license = True
 
 p4a.branch = v2024.01.21
