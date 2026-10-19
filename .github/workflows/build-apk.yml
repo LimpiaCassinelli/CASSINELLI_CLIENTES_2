@@ -43,10 +43,11 @@ jobs:
         if: failure()
         shell: bash
         run: |
-          echo "=== ERRORES ==="
-          grep -n -i "error\|failed\|not found\|undefined" build.log | tail -40
-          echo "=== FINAL DEL LOG ==="
-          grep -v "^#     " build.log | tail -40
+          N=$(grep -n "BUILD FAILED" build.log | head -1 | cut -d: -f1)
+          echo "=== CAUSA (linea $N) ==="
+          if [ -n "$N" ]; then sed -n "$((N-45)),$((N+2))p" build.log; fi
+          echo "=== OTROS AVISOS ==="
+          grep -n -i "Execution failed\|Could not\|Unsupported\|incompatible\|No such file" build.log | tail -15
 
       - name: Publicar APK
         uses: actions/upload-artifact@v4
