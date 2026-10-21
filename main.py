@@ -337,7 +337,8 @@ class Ico(Widget):
 
 
 class BotonIco(ButtonBehavior, Ico):
-    pass
+    def __init__(self, kind="persona", **kw):
+        super().__init__(kind=kind, **kw)
 
 
 class Boton(ButtonBehavior, BoxLayout):
