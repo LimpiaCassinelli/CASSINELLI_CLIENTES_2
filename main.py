@@ -732,7 +732,7 @@ class ClientesApp(App):
         raiz = BoxLayout(orientation="vertical")
         raiz.add_widget(self.cabecera(True))
         cont = V(pad=14, sp_=12)
-        tarjeta = V(fondo=BLANCO, borde=BORDE, pad=14, sp_=12)
+        tarjeta = V(fondo=BLANCO, pad=14, sp_=12)
         fila = H(66)
         fila.add_widget(Ico("escudo", color=VERDE, detalle=BLANCO,
                             size_hint=(None, None), size=(dp(62), dp(62)),
@@ -763,7 +763,7 @@ class ClientesApp(App):
                              size=(dp(22), dp(22)), pos_hint=CENTRO))
             f.add_widget(P(txt, 13, TEXTO))
             cont.add_widget(f)
-        sig = Boton("Siguiente", relleno=False, icono="flecha_der", der=True)
+        sig = Boton("Siguiente", icono="flecha_der", der=True)
         sig.bind(on_release=lambda *a: self.ir("c2" if nivel == 1 else "socio"))
         cont.add_widget(sig)
         raiz.add_widget(scroll(cont))
