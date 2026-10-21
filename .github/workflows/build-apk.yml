@@ -61,3 +61,18 @@ jobs:
           name: CASSINELLI-CLIENTES-APK
           path: bin/*.apk
           if-no-files-found: error
+
+
+      - name: MOSTRAR_ERROR_REAL
+
+        if: failure()
+
+        run: |
+
+          echo '=== LINEAS CON ERROR ==='
+
+          grep -n -i -E 'error|traceback|failed|exception' build.log | tail -n 40 || true
+
+          echo '=== ULTIMAS 100 LINEAS ==='
+
+          tail -n 100 build.log || true
