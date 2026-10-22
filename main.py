@@ -801,7 +801,7 @@ class ClientesApp(App):
                           "repartidos en todos los socios por compras." % pct,
                           15, TEXTO, False, "center"))
         tarj = Caja(fondo=MENTA, radio=14, orientation="horizontal",
-                    size_hint_y=None, height=dp(88), padding=dp(12), spacing=dp(12))
+                    size_hint_y=None, height=dp(140), padding=dp(12), spacing=dp(12))
         tarj.add_widget(Ico("grupo", color=BLANCO, fondo=VERDE, size_hint=(None, None),
                             size=(dp(60), dp(60)), pos_hint=CENTRO))
         tarj.add_widget(P("Si ya tuviste más de 10 compras registradas, "
