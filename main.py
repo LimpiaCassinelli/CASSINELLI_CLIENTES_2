@@ -634,9 +634,9 @@ class ClientesApp(App):
         src_logo = buscar_img("logo", "cassinelli")
         if src_hero:
             try:
-                im = Image(source=src_hero, fit_mode="cover")
+                im = Image(source=src_hero, fit_mode="cover", size_hint=(1, 1), pos_hint={"x": 0, "y": 0})
             except TypeError:
-                im = Image(source=src_hero, allow_stretch=True, keep_ratio=False)
+                im = Image(source=src_hero, allow_stretch=True, keep_ratio=False, size_hint=(1, 1), pos_hint={"x": 0, "y": 0})
             hero.add_widget(im)
         else:
             col = BoxLayout(orientation="vertical", size_hint=(0.92, 0.62),
